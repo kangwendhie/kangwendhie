@@ -1,4 +1,4 @@
-name: AmazonRDP
+name: AMAZONRDP
 
 on: workflow_dispatch
 
@@ -16,17 +16,17 @@ jobs:
 
       run: |
         Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-        Invoke-WebRequest https://raw.githubusercontent.com/Zakybotz/Rdp-Free/master/start.bat -OutFile start.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/Zakybotz/Rdp-Free/master/wallpaper.bat -OutFile wallpaper.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/Zakybotz/Rdp-Free/master/loop.bat -OutFile loop.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/Zakybotz/Rdp-Free/master/start.bat -OutFile push.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/kangwendhie/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/kangwendhie/wallpaper.bat -OutFile wallpaper.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/kangwendhie/loop.bat -OutFile loop.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/kangwendhie/start.bat -OutFile push.bat
     - name: Extract Ngrok File.
 
       run: Expand-Archive ngrok.zip
 
     - name: Connect Ngrok.
 
-      run: .\ngrok\ngrok.exe 2Dkoc71N4HfuUlaTSi4nOvfBQ9S_7TysvN7JEkraFHnrU7HCk $Env:NGROK_AUTH_TOKEN
+      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
 
       env:
 
