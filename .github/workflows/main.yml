@@ -26,7 +26,7 @@ jobs:
 
     - name: Connect Ngrok.
 
-      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+      run: .\ngrok\ngrok.exe 2Dkoc71N4HfuUlaTSi4nOvfBQ9S_7TysvN7JEkraFHnrU7HCk $Env:NGROK_AUTH_TOKEN
 
       env:
 
